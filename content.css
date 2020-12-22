@@ -5,3 +5,7 @@ form[name=fe] table table tr:nth-child(even) {
 input[type=submit] {
     font-size: 2em;
 }
+
+.nonDefaultOn {
+    font-weight: bold;
+}

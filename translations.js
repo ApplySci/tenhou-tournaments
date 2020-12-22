@@ -111,25 +111,25 @@ const tournaments = {
         'DEFAULT': '(needs kan dora and ura dora enabled)',
     },
     '四風連打流局': {
-        'DEFAULT': 'Abortive draw on 4 identical wind discards',
+        'DEFAULT': 'Draw on 4 identical wind discards',
     },
     '四槓散了流局': {
-        'DEFAULT': 'Abortive draw on 4 kans',
+        'DEFAULT': 'Draw on 4 kans',
     },
     '槓表必須': {
         'DEFAULT': '(needs kan dora enabled)',
     },
     '四家立直流局': {
-        'DEFAULT': 'Abortive draw on 4 riichis',
+        'DEFAULT': 'Draw on 4 riichis',
     },
     'なし=続行': {
         'DEFAULT': '(off=continue after 4th riichi)',
     },
     '九種九牌流局': {
-        'DEFAULT': 'Abortive draw on 9 unique terminals & honours',
+        'DEFAULT': 'Draw on 9 unique terminals & honours',
     },
     '三家和了流局': {
-        'DEFAULT': 'Abortive draw on triple ron',
+        'DEFAULT': 'Draw on triple ron',
     },
     'なし=清算': {
         'DEFAULT': '(off=discarder pays all 3)',
@@ -465,7 +465,7 @@ const tournaments = {
         'DEFAULT': 'End on dealer win',
     },
     '聴牌止め': {
-        'DEFAULT': 'End on dealer ready',
+        'DEFAULT': 'End on dealer tenpai',
     },
     '大会ロビ': {
         'DEFAULT': 'Tournament lobby',
