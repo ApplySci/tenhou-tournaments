@@ -1,0 +1,22 @@
+{
+    "manifest_version": 2,
+    "name": "Tenhou tournament-manager translator",
+    "version": "1.0",
+    "description": "Translates the tournament editor page to English",
+    "content_scripts": [
+        {
+            "matches": [
+                "*://tenhou.net/cs/edit*",
+                "*://tenhou.net/make_lobby*"
+            ],
+            "js": [
+                "translations.js",
+                "content.js"
+            ],
+            "css": [
+                "content.css"
+            ],
+            "run_at": "document_end"
+        }
+    ]
+}
