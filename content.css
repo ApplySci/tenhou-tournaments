@@ -7,5 +7,5 @@ input[type=submit] {
 }
 
 .nonDefaultOn {
-    font-weight: bold;
+    /*font-weight: bold;*/
 }
