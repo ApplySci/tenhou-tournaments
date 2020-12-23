@@ -40,7 +40,8 @@ function translateOneNode(node) {
 
 
 function catchRadio(el) {
-    
+
+    // this adds a custom css class to those options that are set to some value other than the tenhou default
     let newClass;
     if (el.value === '1' && el.checked) {
         newClass = 'nonDefaultOn';
@@ -93,8 +94,9 @@ function addColGroup(node, cols) {
 
 function retranslateAll() {
 
-    // restore all nodes to their original value, then translate them if needed
     translateTextBeneathANode(document.body);
+
+    // bespoke things for the tournament pages
 
     document.title = 'Tenhou: create tournament lobby';
 
@@ -122,6 +124,7 @@ function setOptions(options, ignored = null, ignored2 = null) {
 
     // Sort by key length, so that when performing partial matching,
     // the entry with more matching characters will have priority
+
     partialPhrases = Object.keys(tournaments).sort((a, b) => {
         return b.length - a.length;
     });

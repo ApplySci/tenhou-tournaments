@@ -1,6 +1,6 @@
 const tournaments = {
     '大会ロビーを作成する': {
-        'DEFAULT': 'create a tournament lobby',
+        'DEFAULT': 'Create a tournament lobby',
     },
     '大会ロビーの作成 ': {
         'DEFAULT': 'Creating a tournament lobby',
@@ -93,7 +93,7 @@ const tournaments = {
         'DEFAULT': 'Bankruptcy: game ends if a player drops below 0',
     },
     '槓ドラ即乗り': {
-        'DEFAULT': 'kan dora is flipped immediately',
+        'DEFAULT': 'Kan dora is flipped immediately',
     },
     '槓表必須': {
         'DEFAULT': '(needs kan dora enabled)',
@@ -135,7 +135,7 @@ const tournaments = {
         'DEFAULT': '(off=discarder pays all 3)',
     },
     '頭はね': {
-        'DEFAULT': 'headbump',
+        'DEFAULT': 'Head-bump',
     },
     'ダブロン&トリロン': {
         'DEFAULT': '(off=double ron, triple ron allowed)',
@@ -165,7 +165,7 @@ const tournaments = {
         'DEFAULT': '(on=E+W, S+N)',
     },
     'サドンデス': {
-        'DEFAULT': 'sudden death',
+        'DEFAULT': 'Sudden death',
     },
     '+４局': {
         'DEFAULT': '(up to 4 dealerships)',
