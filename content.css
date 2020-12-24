@@ -2,10 +2,19 @@ form[name=fe] table table tr:nth-child(even) {
     background-color: #fffff0;
 }
 
-input[type=submit] {
+input[type=submit], table blockquote:nth-of-type(2) input[type=button] {
     font-size: 2em;
 }
 
 .nonDefaultOn {
-    /*font-weight: bold;*/
+    font-style: italic;
+}
+
+h3 {
+    border-top: 2px solid #004;
+    padding-top: 5px;
+}
+
+.radioOn {
+    background-color: #AFA;
 }

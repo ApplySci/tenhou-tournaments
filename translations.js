@@ -171,7 +171,7 @@ const tournaments = {
         'DEFAULT': '(up to 4 dealerships)',
     },
     '(注)ロビーに以下のルールの詳細は表示されません。': {
-        'DEFAULT': 'Details of the following rules will not be displayed in the lobby',
+        'DEFAULT': 'Details of the following rules will not be displayed in the lobby. When options are changed from the tenhou default, they are italicised',
     },
     '開始点数': {
         'DEFAULT': 'Starting points',
@@ -210,7 +210,7 @@ const tournaments = {
         'DEFAULT': 'Placement bonuses(uma)',
     },
     '空欄の場合は標準値を使用します': {
-        'DEFAULT': 'Leave the above boxes blank if you want to use the defaults (shown to the right of the boxes for 4p & 3p games respectively)',
+        'DEFAULT': 'Leave a box blank to use the default value (shown to the right of the boxes)',
     },
     '順位ウマに同点がある場合は「四捨五入なし」が必須': {
         'DEFAULT': 'Rounding must be off if tied placements are allowed',
@@ -500,14 +500,14 @@ const tournaments = {
     '対戦者/ルール/席順/乱数種などを固定する特殊な対戦機能が利用可能です': {
         'DEFAULT': 'Settings are available on the following screen to specify participants, seating order, and custom rules',
     },
-    '管理者にはKICK機能On': {
+    '管理者にはKICK機能あり': {
         'DEFAULT': 'KICK function is On for the administrator',
     },
     'をよく読んでから作成を行なってください。': {
         'DEFAULT': 'Please read the guide carefully before creating a tournament lobby.',
     },
     'マニュアル': {
-        'DEFAULT': '(Japanese manual)'
+        'DEFAULT': '(Japanese manual) '
     },
     'この接続元からの作成は約７日間行なえません': {
         'DEFAULT': 'This IP address has recently created a tournament. You must wait 7 days between creating new tournaments',
@@ -533,7 +533,13 @@ const tournaments = {
     '天鳳': {
         'DEFAULT': 'Tenhou ',
     },
-    /*
+    /*      
+    '': {
+        'DEFAULT': '',
+    },
+    '': {
+        'DEFAULT': '',
+    },
     '': {
         'DEFAULT': '',
     },
