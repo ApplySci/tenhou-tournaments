@@ -168,67 +168,67 @@ let actualCode = '(' + function() {
             let alertText = textArray[0];
             let elementToFocus = null;
             switch(alertText) { 
-                case '大会名を入力してください':
-                    elementToFocus = 'T';
+                case '大会名を入力してください': // TOCHECK
+                    elementToFocus = 'input[name=T';
                     alertText = 'Tournament name cannot be blank';
                     break;
-                case '大会名は20文字以内で入力してください':
-                    elementToFocus = 'T';
+                case '大会名は20文字以内で入力してください': // TOCHECK
+                    elementToFocus = 'form[name=fe] input[name=T]';
                     alertText = 'Tournament name must be shorter than 21 characters';
                     break;
-                case '「開始点数」「トップ必要点数」「清算原点」は同時に指定してください。':
-                    elementToFocus = 'RCS_04';
+                case '「開始点数」「トップ必要点数」「清算原点」は同時に指定してください。': // TOCHECK
+                    elementToFocus = 'form[name=fe] input[name=RCS_04]';
                     alertText = 'If you specify one of: starting points, minimum score needed, and points deducted at end of game, then you must specify all three.';
                     break;
-                case '開催期間をもう一度確認してください':
-                    elementToFocus = 'R1';
+                case '開催期間をもう一度確認してください': // TOCHECK
+                    elementToFocus = 'form[name=fe] input[name=R1]';
                     alertText = 'End date must be after start date';
                     break;
-                case '段位指定をもう一度確認してください':
-                    elementToFocus = 'DAN1';
+                case '段位指定をもう一度確認してください': // TOCHECK
+                    elementToFocus = 'form[name=fe] input[name=DAN1]';
                     alertText = 'Upper dan limit must not be lower than lower dan limit';
                     break;
-                case 'Rate指定をもう一度確認してください':
-                    elementToFocus = 'RATE1';
+                case 'Rate指定をもう一度確認してください': // TOCHECK
+                    elementToFocus = 'form[name=fe] input[name=RATE1]';
                     alertText = 'Upper R limit must not be lower than lower R limit';
                     break;
-/*
-                case '参加許可は100人以内で指定してください':
-                    elementToFocus = '';
-                    alertText = '';
+                case '参加許可は100人以内で指定してください': // TOCHECK
+                    elementToFocus = 'form[name=fe] input[name=M]';
+                    alertText = 'Maximum 100 permitted players';
                     break;
-                case 'チャット許可は100人以内で指定してください':
-                    elementToFocus = '';
-                    alertText = '';
+                case 'チャット許可は100人以内で指定してください': // TOCHECK
+                    elementToFocus = 'form[name=fe] input[name=CM]';
+                    alertText = 'Maximum 100 allowed to chat';
                     break;
                 case 'ランキングを使用する場合には参加対象を「ゲストID不可」にしてください':
-                    elementToFocus = '';
-                    alertText = '';
+                    elementToFocus = 'form[name=fe] input[name=DISABLEGUESTID]';
+                    alertText = 'If you want to restrict players by dan or R, you must also prevent unregistered users from entering';
                     break;
-                case '対戦者を4人または3人(サンマ)で指定してください':
-                    elementToFocus = '';
-                    alertText = '';
+                case '対戦者を4人または3人(サンマ)で指定してください': // TOCHECK
+                    elementToFocus = 'form[name=fs] input[name=M]';
+                    alertText = 'The number of players named must match the number of players required for a full table';
                     break;
-                case '開始点数の指定方法に誤りがあります':
-                    elementToFocus = '';
-                    alertText = '';
+                case '開始点数の指定方法に誤りがあります': // TOCHECK
+                    elementToFocus = 'form[name=fs] input[name=M]';
+                    alertText = 'When specifying starting points for each player, there must be a single space between the player name, and the score, with no other spaces';
                     break;
-                case '開始点数は400000以下で指定してください':
-                    elementToFocus = '';
-                    alertText = '';
+                case '開始点数は400000以下で指定してください': // TOCHECK
+                    elementToFocus = 'form[name=fs] input[name=M]';
+                    alertText = "No player's starting score can exceed 40000";
                     break;
-                case '開始点数は100点単位で指定してください':
-                    elementToFocus = '';
-                    alertText = '';
+                case '開始点数は100点単位で指定してください': // TOCHECK
+                    elementToFocus = 'form[name=fs] input[name=M]';
+                    alertText = 'Starting scores must be divisible by 100';
                     break;
-                case '開始点数を指定する場合には全員分を指定してください':
-                    elementToFocus = '';
-                    alertText = '';
+                case '開始点数を指定する場合には全員分を指定してください': // TOCHECK
+                    elementToFocus = 'form[name=fs] input[name=M]';
+                    alertText = 'If you specify a starting score for one player, you must specify it for all';
                     break;
-                case '開始点数の合計が会場のルールと一致しません。':
-                    elementToFocus = '';
-                    alertText = '';
+                case '開始点数の合計が会場のルールと一致しません。': // TOCHECK
+                    elementToFocus = 'form[name=fs] input[name=M]';
+                    alertText = 'The number of starting scores does not match the number of players';
                     break;
+/*
                 case '':
                     elementToFocus = '';
                     alertText = '';
@@ -244,7 +244,7 @@ let actualCode = '(' + function() {
 */
             }
             if (elementToFocus !== null) {
-                document.querySelector('input[name=' + elementToFocus + ']').focus();
+                document.querySelector(elementToFocus).focus();
             }
             textArray[0] = alertText;
             nativeAlert(textArray.join('\n'));
