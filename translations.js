@@ -240,7 +240,7 @@ const tournaments = {
         'DEFAULT': 'If there is no bankruptcy, then there is no minimum points that a player must have in order to riichi',
     },
     'ダブロン・トリロンあり＝「三家和了流局なし」「頭はねなし」': {
-        'DEFAULT': 'If headbump is ON, there is no abortive draw on triple ron',
+        'DEFAULT': 'If head-bump is ON, there is no abortive draw on triple ron',
     },
     '１位は逆算します': {
         'DEFAULT': 'First place uma is calculated so that the row sums to zero',
@@ -372,7 +372,7 @@ const tournaments = {
         'DEFAULT': 'Emptying the "New password" field and pressing Update will allow edits to the tournament without requiring a password',
     },
     'だれでもOK': {
-        'DEFAULT': 'Anyone can chat',
+        'DEFAULT': 'There are currently no ID-based restrictions',
     },
     '名': {
         'DEFAULT': ' names',
@@ -408,7 +408,7 @@ const tournaments = {
         'DEFAULT': 'If you change any rules, you need to press UPDATE and let the screen refresh, before you press START',
     },
     '開始点数の上限は400000、これを超える得点は卓外で補正してください': {
-        'DEFAULT': 'The maximum allowed starting score is 40,000',
+        'DEFAULT': 'The maximum allowed starting score is 400,000',
     },
     '開始点数を指定する場合には全員分を指定してください': {
         'DEFAULT': 'If you specify an individual starting score for any players, you must specify it for EACH player',
@@ -423,7 +423,7 @@ const tournaments = {
         'DEFAULT': 'If you manually start a game, it will override the options further up that would otherwise restrict entry based on dan or R rate',
     },
     '対戦者の1行目=起家、以降南西北の席順で開始します': {
-        'DEFAULT': 'Tthe player name on the first line in the opponents box will start as East; then South, West, North respectively for subsequent lines',
+        'DEFAULT': 'Tthe player name on the first line in the opponents box will start as East; then South, West, and North respectively for subsequent lines',
     },
     'EDITの対戦許可に架空の名前を入力して予約を不可にすることができます': {
         'DEFAULT': 'If you enter a non-existent player name in the "Limit entry to these listed players" box, you will prevent players queuing for a game',
@@ -432,10 +432,10 @@ const tournaments = {
         'DEFAULT': 'You can provide starting points for each player, in units of 100. Put the points after the player\'s name, with a single space between name and points, e.g. Player 25000',
     },
     '待機プレーヤでもゲームが開始します': {
-        'DEFAULT': 'If you start a game manually, and it includes a queuing players, they will be removed from the queue and the game will start',
+        'DEFAULT': 'If you start a game manually, and it includes any queuing players, they will be removed from the queue and the game will start',
     },
     'ウマ・オカなし、四捨五入なしにすると次の開始点数をログや#ENDから逆算しやすくなります': {
-        'DEFAULT': 'If you\'re going to do a tournament where scores carry over, you should probably remove oka and uma from the settings; else you\'ve got to manually subtract them back off the #END message that reports the scores',
+        'DEFAULT': 'If, in the tournament, scores carry over, then you should remove oka and uma from the settings; else you\'ve got to manually subtract them back off the #END message that reports the scores',
     },
     'ランキング': {
         'DEFAULT': 'Tournament Ranking based on best run',

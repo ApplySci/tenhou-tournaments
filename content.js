@@ -24,6 +24,7 @@ function translateString(textIn) {
 
 }
 
+
 function translateOneNode(node) {
 
     const originalText = node.nodeValue;
@@ -52,10 +53,12 @@ function catchRadio(el) {
     }
 
     el.parentElement.parentElement.parentElement.childNodes[0].className = 'r ' + newClass;
+
 }
 
 
 const translateTextBeneathANode = function(topNode) {
+
     const textNodeIterator = document.createTreeWalker(topNode, NodeFilter.SHOW_TEXT, null, false);
 
     // We are messing with the Dom tree while we iterate over it, so first save in an array
@@ -68,7 +71,9 @@ const translateTextBeneathANode = function(topNode) {
     for (let node of textNodeList) {
         translateOneNode(node);
     }
+
 };
+
 
 function setToObserve() {
 
@@ -78,6 +83,7 @@ function setToObserve() {
 
 
 function addColGroup(node, cols) {
+
     let firstChild = node.childNodes[0];
     if (firstChild.tagName === 'COLGROUP') {
         return;
@@ -89,6 +95,7 @@ function addColGroup(node, cols) {
         grp.insertBefore(col, null);
     }
     node.insertBefore(grp, firstChild);
+
 }
 
 
@@ -114,6 +121,23 @@ function retranslateAll() {
         }
     }
 
+    elem = document.querySelector('form[name=fe] input[name=M]');
+    if (elem) {
+        elem.placeholder = 'List of tenhou player names, one per line';
+    }
+
+    for (const selector of [
+            'form[name=fe] textarea[name=M]',
+            'form[name=fe] textarea[name=CM]',
+            'form[name=fk] textarea[name=UN]',
+            'form[name=fs] textarea[name=M]',
+            ]) {
+        elem = document.querySelector(selector);
+        if (elem) {
+            elem.placeholder = 'List of tenhou player names, one per line';
+        }
+    }
+
     let optionTables = document.querySelectorAll("form[name=fe] table table");
 
     addColGroup(optionTables[0], [40, 20, 20, 20]);
@@ -121,19 +145,6 @@ function retranslateAll() {
 
 }
 
-function setOptions(options, ignored = null, ignored2 = null) {
-
-    // Sort by key length, so that when performing partial matching,
-    // the entry with more matching characters will have priority
-
-    partialPhrases = Object.keys(tournaments).sort((a, b) => {
-        return b.length - a.length;
-    });
-
-    retranslateAll();
-    setToObserve();
-
-}
 
 function onMutate(mutations) {
 
@@ -145,6 +156,7 @@ function onMutate(mutations) {
 
 
 function rearangeRadios() {
+
     document.querySelectorAll("form[name=fe] input[type=radio]").forEach(function isItOn(el) {
         catchRadio(el);
         el.addEventListener('change', () => catchRadio(el));
@@ -152,12 +164,27 @@ function rearangeRadios() {
             el.parentElement.parentElement.className = 'radioOn';
         }
     });
+
 }
 
-mutationObserver = new MutationObserver(onMutate);
-setOptions();
-translateTextBeneathANode(document.body, false, true);
+
+// ============================================================================
+//
+//              initialisation starts here
+
+// Sort by key length, so that when performing partial matching,
+// the entry with more matching characters will have priority
+
+partialPhrases = Object.keys(tournaments).sort((a, b) => {
+    return b.length - a.length;
+});
+
+
+retranslateAll();
 rearangeRadios();
+mutationObserver = new MutationObserver(onMutate);
+setToObserve();
+
 
 // translate javascript alert boxes
 
@@ -184,8 +211,8 @@ let actualCode = '(' + function() {
                     textArray[0] = 'Tournament name must be shorter than 21 characters';
                     break;
                 case '開催期間をもう一度確認してください':
-                    elementToFocus = 'form[name=fe] [name=R1]';
-                    textArray[0] = 'End date must be after start date';
+                    elementToFocus = 'form[name=fe] [name=R0]';
+                    textArray[0] = 'Start date must be before End date';
                     break;
                 case '段位指定をもう一度確認してください':
                     elementToFocus = 'form[name=fe] [name=DAN1]';
